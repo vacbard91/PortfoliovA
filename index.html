@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio E5 — Valentin ACBARD | BTS SIO SISR</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fdfdfd;
+  --bg-alt: #f6f7f9;
+  --bg-card: #ffffff;
+  --border: #e4e7ec;
+  --border-light: #eef0f4;
+  --text: #1a1d26;
+  --text-secondary: #4a5068;
+  --text-muted: #8690a8;
+  --accent: #2c5282;
+  --accent-light: #e8eef6;
+  --c1: #2c5282; --c1-bg: #e8eef6;
+  --c2: #276749; --c2-bg: #e6f4ed;
+  --c3: #9c4221; --c3-bg: #fef0e6;
+  --c4: #2b6cb0; --c4-bg: #e3f0fc;
+  --c5: #744210; --c5-bg: #fef5e7;
+  --c6: #6b46c1; --c6-bg: #f0ebfa;
+  --radius: 8px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; -webkit-font-smoothing:antialiased; }
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2.5rem;height:56px;display:flex;align-items:center;justify-content:space-between;background:rgba(253,253,253,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
+.nav-left{display:flex;align-items:center;gap:10px}
+.nav-logo{width:28px;height:28px;background:var(--accent);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;font-weight:500}
+.nav-name{font-weight:600;font-size:0.85rem}.nav-sep{color:var(--border);font-weight:300}.nav-label{font-size:0.8rem;color:var(--text-muted)}
+nav ul{display:flex;gap:0.25rem;list-style:none}
+nav ul a{text-decoration:none;color:var(--text-secondary);font-size:0.8rem;font-weight:500;padding:6px 14px;border-radius:6px;transition:all 0.2s}
+nav ul a:hover{background:var(--bg-alt);color:var(--text)}
+
+.hero{padding:8rem 2.5rem 4rem;max-width:860px;margin:0 auto}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.73rem;font-weight:500;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem}
+.hero h1{font-family:'Source Serif 4',Georgia,serif;font-size:2.6rem;font-weight:700;line-height:1.15;margin-bottom:1rem}
+.hero-desc{font-size:1.05rem;color:var(--text-secondary);max-width:580px;line-height:1.7}
+.hero-info{display:flex;gap:2.5rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border-light);flex-wrap:wrap}
+.hero-info-item{display:flex;flex-direction:column;gap:2px}
+.hi-label{font-size:0.68rem;font-weight:500;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted)}
+.hi-value{font-size:0.88rem;font-weight:500}
+
+.container{max-width:860px;margin:0 auto;padding:0 2.5rem}
+section{padding:4rem 0}
+.section-divider{height:1px;background:var(--border-light);max-width:860px;margin:0 auto}
+.section-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:0.6rem}
+.section-title{font-family:'Source Serif 4',Georgia,serif;font-size:1.65rem;font-weight:700;line-height:1.25;margin-bottom:0.5rem}
+.section-desc{font-size:0.9rem;color:var(--text-secondary);margin-bottom:2.5rem;max-width:520px}
+
+.stats-row{display:flex;gap:1px;background:var(--border-light);border:1px solid var(--border-light);border-radius:var(--radius);overflow:hidden;margin-bottom:2.5rem}
+.stat-item{flex:1;background:var(--bg-card);padding:1.25rem 1rem;text-align:center}
+.stat-number{font-family:'Source Serif 4',Georgia,serif;font-size:1.8rem;font-weight:700;line-height:1;margin-bottom:4px}
+.stat-label{font-size:0.7rem;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em}
+
+.timeline{position:relative;padding-left:1.75rem}
+.timeline::before{content:'';position:absolute;left:4px;top:4px;bottom:4px;width:1px;background:var(--border)}
+.tl-item{position:relative;padding-bottom:2rem;padding-left:1rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-1.75rem;top:6px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.tl-date{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text-muted);margin-bottom:2px}
+.tl-item h3{font-size:0.92rem;font-weight:600;margin-bottom:3px}
+.tl-item p{font-size:0.84rem;color:var(--text-secondary);line-height:1.6}
+
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.comp-card{border:1px solid var(--border-light);border-radius:var(--radius);padding:1.25rem;background:var(--bg-card);transition:box-shadow 0.2s}
+.comp-card:hover{box-shadow:var(--shadow-sm)}
+.comp-head{display:flex;align-items:center;gap:10px;margin-bottom:0.75rem}
+.comp-icon{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;font-weight:600;flex-shrink:0}
+.comp-card:nth-child(1) .comp-icon{background:var(--c1-bg);color:var(--c1)}
+.comp-card:nth-child(2) .comp-icon{background:var(--c2-bg);color:var(--c2)}
+.comp-card:nth-child(3) .comp-icon{background:var(--c3-bg);color:var(--c3)}
+.comp-card:nth-child(4) .comp-icon{background:var(--c4-bg);color:var(--c4)}
+.comp-card:nth-child(5) .comp-icon{background:var(--c5-bg);color:var(--c5)}
+.comp-card:nth-child(6) .comp-icon{background:var(--c6-bg);color:var(--c6)}
+.comp-card h3{font-size:0.85rem;font-weight:600;line-height:1.3}
+.comp-list{list-style:none;font-size:0.78rem;color:var(--text-secondary);line-height:1.8}
+.comp-list li{padding-left:12px;position:relative}
+.comp-list li::before{content:'–';position:absolute;left:0;color:var(--text-muted)}
+.comp-badge{display:inline-block;margin-top:0.75rem;font-size:0.68rem;font-weight:600;padding:2px 8px;border-radius:4px}
+.comp-card:nth-child(1) .comp-badge{background:var(--c1-bg);color:var(--c1)}
+.comp-card:nth-child(2) .comp-badge{background:var(--c2-bg);color:var(--c2)}
+.comp-card:nth-child(3) .comp-badge{background:var(--c3-bg);color:var(--c3)}
+.comp-card:nth-child(4) .comp-badge{background:var(--c4-bg);color:var(--c4)}
+.comp-card:nth-child(5) .comp-badge{background:var(--c5-bg);color:var(--c5)}
+.comp-card:nth-child(6) .comp-badge{background:var(--c6-bg);color:var(--c6)}
+
+.real-group{margin-bottom:2.5rem}
+.real-group-title{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--text-muted);padding-bottom:0.6rem;border-bottom:1px solid var(--border-light);margin-bottom:0.5rem}
+.real-item{border-bottom:1px solid var(--border-light);cursor:pointer;transition:background 0.15s}
+.real-item:last-child{border-bottom:none}
+.real-item:hover{background:var(--bg-alt)}
+.real-header{display:flex;align-items:center;justify-content:space-between;padding:0.9rem 0.5rem;gap:1rem}
+.real-header h3{font-size:0.88rem;font-weight:600;flex:1}
+.real-meta{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.real-period{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--text-muted)}
+.real-tags-row{display:flex;gap:4px}
+.rtag{font-size:0.62rem;font-weight:600;padding:2px 7px;border-radius:4px;white-space:nowrap}
+.rtag-c1{background:var(--c1-bg);color:var(--c1)}.rtag-c2{background:var(--c2-bg);color:var(--c2)}.rtag-c3{background:var(--c3-bg);color:var(--c3)}.rtag-c4{background:var(--c4-bg);color:var(--c4)}.rtag-c5{background:var(--c5-bg);color:var(--c5)}.rtag-c6{background:var(--c6-bg);color:var(--c6)}
+.real-chevron{color:var(--text-muted);font-size:0.8rem;transition:transform 0.25s;flex-shrink:0}
+.real-item.open .real-chevron{transform:rotate(90deg)}
+.real-body{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
+.real-item.open .real-body{max-height:400px}
+.real-body-inner{padding:0 0.5rem 1.25rem}
+.rb-row{margin-bottom:0.75rem}
+.rb-label{font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:2px}
+.rb-text{font-size:0.84rem;color:var(--text-secondary);line-height:1.65}
+
+.table-wrap{overflow-x:auto;border:1px solid var(--border-light);border-radius:var(--radius);background:var(--bg-card)}
+table.synth{width:100%;border-collapse:collapse;font-size:0.78rem;min-width:760px}
+table.synth thead th{padding:0.7rem 0.5rem;font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);text-align:center;border-bottom:1px solid var(--border);background:var(--bg-alt);white-space:nowrap}
+table.synth thead th:first-child{text-align:left;padding-left:1rem;min-width:260px}
+table.synth thead th:nth-child(2){min-width:90px}
+table.synth thead .th1{color:var(--c1)}.th2{color:var(--c2)}.th3{color:var(--c3)}.th4{color:var(--c4)}.th5{color:var(--c5)}.th6{color:var(--c6)}
+table.synth tbody tr{border-bottom:1px solid var(--border-light)}
+table.synth tbody tr:last-child{border-bottom:none}
+table.synth tbody tr:hover{background:var(--bg-alt)}
+table.synth tbody tr.group-row td{font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);padding:0.5rem 1rem;background:var(--bg-alt)}
+table.synth td{padding:0.6rem 0.5rem;text-align:center;vertical-align:middle}
+table.synth td:first-child{text-align:left;padding-left:1rem;font-weight:500}
+table.synth td:nth-child(2){font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--text-muted)}
+.ck{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:4px;font-size:0.7rem;font-weight:600}
+.ck1{background:var(--c1-bg);color:var(--c1)}.ck2{background:var(--c2-bg);color:var(--c2)}.ck3{background:var(--c3-bg);color:var(--c3)}.ck4{background:var(--c4-bg);color:var(--c4)}.ck5{background:var(--c5-bg);color:var(--c5)}.ck6{background:var(--c6-bg);color:var(--c6)}
+
+footer{padding:2.5rem;text-align:center;border-top:1px solid var(--border-light);font-size:0.78rem;color:var(--text-muted)}
+footer a{color:var(--accent);text-decoration:none}
+
+@media(max-width:768px){nav ul{display:none}nav{padding:0 1.25rem}.hero{padding:6rem 1.25rem 3rem}.hero h1{font-size:1.8rem}.container{padding:0 1.25rem}.comp-grid{grid-template-columns:1fr}.stats-row{flex-wrap:wrap}.stat-item{min-width:45%}.real-header{flex-direction:column;align-items:flex-start}.real-meta{align-self:flex-start}}
+@media print{nav{display:none}.hero{padding-top:2rem}section{padding:1.5rem 0}.real-body{max-height:none!important;overflow:visible!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <div class="nav-logo">VA</div>
+    <span class="nav-name">Valentin Acbard</span>
+    <span class="nav-sep">/</span>
+    <span class="nav-label">Portfolio E5</span>
+  </div>
+  <ul>
+    <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#realisations">Réalisations</a></li>
+    <li><a href="#synthese">Synthèse</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">BTS SIO · Option SISR · Session 2026</div>
+  <h1>Portfolio professionnel<br>Épreuve E5</h1>
+  <p class="hero-desc">Support et mise à disposition de services informatiques — Bloc de compétences n°1. Ce portfolio retrace mon parcours de professionnalisation et présente l'ensemble de mes réalisations.</p>
+  <div class="hero-info">
+    <div class="hero-info-item"><span class="hi-label">Candidat</span><span class="hi-value">Valentin ACBARD</span></div>
+    <div class="hero-info-item"><span class="hi-label">Centre de formation</span><span class="hi-value">CFA ISCIO-EVE</span></div>
+    <div class="hero-info-item"><span class="hi-label">Option</span><span class="hi-value">SISR</span></div>
+    <div class="hero-info-item"><span class="hi-label">Portfolio</span><span class="hi-value">ACBARD-portfolio.fr</span></div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<section id="parcours"><div class="container">
+  <div class="section-eyebrow">01 · Parcours</div>
+  <h2 class="section-title">Mon parcours de professionnalisation</h2>
+  <p class="section-desc">Les étapes clés de ma formation et de mon expérience en entreprise dans le domaine de l'infrastructure systèmes et réseaux.</p>
+  <div class="stats-row">
+    <div class="stat-item"><div class="stat-number">12</div><div class="stat-label">Réalisations</div></div>
+    <div class="stat-item"><div class="stat-number">6</div><div class="stat-label">Compétences</div></div>
+    <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">Années</div></div>
+    <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">En formation</div></div>
+    <div class="stat-item"><div class="stat-number">7</div><div class="stat-label">En entreprise</div></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-date">Septembre 2024</div><h3>Début du BTS SIO option SISR</h3><p>Entrée en formation au CFA ISCIO-EVE en alternance. Apprentissage des fondamentaux de l'administration systèmes et réseaux.</p></div>
+    <div class="tl-item"><div class="tl-date">Septembre 2024 — Juin 2025</div><h3>Première année en entreprise</h3><p>Inventaire du parc avec GLPI, gestion des droits Active Directory, traitement des incidents et demandes utilisateurs.</p></div>
+    <div class="tl-item"><div class="tl-date">Octobre 2024 — Février 2025</div><h3>Projet StreamIO</h3><p>Segmentation VLAN et routage inter-VLAN : gestion de patrimoine, travail en mode projet et mise à disposition de services.</p></div>
+    <div class="tl-item"><div class="tl-date">Septembre 2025 — Juin 2026</div><h3>Deuxième année en entreprise</h3><p>Déploiement DHCP/DNS, supervision réseau Nagios, migration Windows 11 du parc de postes.</p></div>
+    <div class="tl-item"><div class="tl-date">Juin 2026</div><h3>Épreuve E5 — BTS SIO</h3><p>Présentation du portfolio et évaluation des compétences du Bloc 1.</p></div>
+  </div>
+</div></section>
+
+<div class="section-divider"></div>
+
+<section id="competences"><div class="container">
+  <div class="section-eyebrow">02 · Bloc 1</div>
+  <h2 class="section-title">Compétences mobilisées</h2>
+  <p class="section-desc">Les 6 compétences du bloc « Support et mise à disposition de services informatiques ».</p>
+  <div class="comp-grid">
+    <div class="comp-card"><div class="comp-head"><div class="comp-icon">C1</div><h3>Gérer le patrimoine informatique</h3></div><ul class="comp-list"><li>Recenser et identifier les ressources numériques</li><li>Exploiter des référentiels, normes et standards</li><li>Mettre en place et vérifier les niveaux d'habilitation</li><li>Vérifier les conditions de continuité d'un service</li><li>Gérer des sauvegardes</li><li>Vérifier le respect des règles d'utilisation</li></ul><div class="comp-badge">5 réalisations</div></div>
+    <div class="comp-card"><div class="comp-head"><div class="comp-icon">C2</div><h3>Répondre aux incidents et demandes</h3></div><ul class="comp-list"><li>Collecter, suivre et orienter des demandes</li><li>Traiter des demandes réseau et système</li><li>Traiter des demandes concernant les applications</li></ul><div class="comp-badge">2 réalisations</div></div>
+    <div class="comp-card"><div class="comp-head"><div class="comp-icon">C3</div><h3>Développer la présence en ligne</h3></div><ul class="comp-list"><li>Valoriser l'image sur les médias numériques</li><li>Référencer les services en ligne</li><li>Participer à l'évolution d'un site Web</li></ul><div class="comp-badge">3 réalisations</div></div>
+    <div class="comp-card"><div class="comp-head"><div class="comp-icon">C4</div><h3>Travailler en mode projet</h3></div><ul class="comp-list"><li>Analyser les objectifs et modalités d'organisation</li><li>Planifier les activités</li><li>Évaluer les indicateurs de suivi et analyser les écarts</li></ul><div class="comp-badge">3 réalisations</div></div>
+    <div class="comp-card"><div class="comp-head"><div class="comp-icon">C5</div><h3>Mettre à disposition un service informatique</h3></div><ul class="comp-list"><li>Réaliser les tests d'intégration et d'acceptation</li><li>Déployer un service</li><li>Accompagner les utilisateurs</li></ul><div class="comp-badge">4 réalisations</div></div>
+    <div class="comp-card"><div class="comp-head"><div class="comp-icon">C6</div><h3>Organiser son développement professionnel</h3></div><ul class="comp-list"><li>Environnement d'apprentissage personnel</li><li>Outils et stratégies de veille informationnelle</li><li>Gestion de l'identité professionnelle</li><li>Développement du projet professionnel</li></ul><div class="comp-badge">3 réalisations</div></div>
+  </div>
+</div></section>
+
+<div class="section-divider"></div>
+
+<section id="realisations"><div class="container">
+  <div class="section-eyebrow">03 · Réalisations professionnelles</div>
+  <h2 class="section-title">Mes réalisations</h2>
+  <p class="section-desc">Classées par contexte. Cliquez sur une réalisation pour afficher les détails.</p>
+
+  <div class="real-group"><div class="real-group-title">Réalisations en cours de formation</div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Création de site codé en HTML et CSS</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c3">C3</span></div><span class="real-period">01/25 – 03/25</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Conception et développement d'un site web statique en HTML5 et CSS3. Structuration sémantique du contenu et application de styles responsifs conformes aux conventions d'écriture électronique.</div></div><div class="rb-row"><div class="rb-label">Compétences</div><div class="rb-text">Participation à l'évolution d'un site Web exploitant les données de l'organisation. Respect de la charte graphique.</div></div><div class="rb-row"><div class="rb-label">Technologies</div><div class="rb-text">HTML5, CSS3, Visual Studio Code</div></div></div></div></div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Projet StreamIO : segmentation VLAN et routage inter-VLAN</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c1">C1</span><span class="rtag rtag-c4">C4</span><span class="rtag rtag-c5">C5</span></div><span class="real-period">10/24 – 02/25</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Segmentation réseau par VLAN et routage inter-VLAN pour la société fictive StreamIO. Compétences transversales : gestion du patrimoine réseau, travail collaboratif en mode projet, déploiement d'un service réseau opérationnel.</div></div><div class="rb-row"><div class="rb-label">Technologies</div><div class="rb-text">Cisco Packet Tracer, switches manageables, routeur, protocole 802.1Q</div></div></div></div></div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Charte informatique et sensibilisation RGPD</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c1">C1</span><span class="rtag rtag-c3">C3</span></div><span class="real-period">02/25 – 04/25</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Rédaction d'une charte informatique et actions de sensibilisation au RGPD. Aspects juridiques liés à l'utilisation des ressources numériques et à la protection des données personnelles.</div></div></div></div></div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Veille informationnelle</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c6">C6</span></div><span class="real-period">09/24 – 06/25</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Stratégie de veille informationnelle et technologique. Utilisation d'outils de curation pour suivre l'actualité du secteur et des technologies émergentes.</div></div></div></div></div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Portfolio en ligne</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c3">C3</span><span class="rtag rtag-c6">C6</span></div><span class="real-period">09/24 – 06/25</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Conception, développement et mise en ligne du portfolio professionnel (ACBARD-portfolio.fr). Présentation du parcours et des réalisations.</div></div></div></div></div>
+  </div>
+
+  <div class="real-group"><div class="real-group-title">En milieu professionnel — 1ère année</div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Inventaire du parc informatique avec GLPI</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c1">C1</span></div><span class="real-period">09/24 – 06/25</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Recensement exhaustif du patrimoine informatique avec GLPI. Enregistrement des actifs (postes, serveurs, périphériques, licences) et maintien à jour de la base de gestion des configurations.</div></div><div class="rb-row"><div class="rb-label">Technologies</div><div class="rb-text">GLPI, FusionInventory</div></div></div></div></div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Gestion des droits d'accès Active Directory</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c1">C1</span></div><span class="real-period">10/24 – 03/25</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Administration des comptes utilisateurs et groupes de sécurité dans Active Directory. Mise en place et vérification des niveaux d'habilitation pour l'accès aux ressources partagées.</div></div><div class="rb-row"><div class="rb-label">Technologies</div><div class="rb-text">Windows Server, Active Directory, GPO</div></div></div></div></div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Traitement des incidents et demandes via GLPI</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c2">C2</span></div><span class="real-period">09/24 – 06/25</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Prise en charge, diagnostic et résolution des incidents via GLPI. Suivi du cycle de vie des tickets et rédaction de comptes rendus d'intervention.</div></div><div class="rb-row"><div class="rb-label">Technologies</div><div class="rb-text">GLPI, prise de contrôle à distance, outils de diagnostic réseau</div></div></div></div></div>
+  </div>
+
+  <div class="real-group"><div class="real-group-title">En milieu professionnel — 2ème année</div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Déploiement et tests d'un service DHCP/DNS</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c5">C5</span></div><span class="real-period">12/24 – 03/26</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Installation, configuration et déploiement des services DHCP et DNS. Tests d'intégration et accompagnement des utilisateurs lors de la mise en production.</div></div><div class="rb-row"><div class="rb-label">Technologies</div><div class="rb-text">Windows Server, DHCP, DNS</div></div></div></div></div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Supervision réseau avec Nagios</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c1">C1</span><span class="rtag rtag-c2">C2</span></div><span class="real-period">01/25 – 05/26</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Déploiement de Nagios pour superviser l'infrastructure. Alertes et tableaux de bord pour anticiper les incidents et assurer la continuité de service.</div></div><div class="rb-row"><div class="rb-label">Technologies</div><div class="rb-text">Nagios, SNMP, Linux</div></div></div></div></div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Construction de mon projet professionnel</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c6">C6</span></div><span class="real-period">09/24 – 06/26</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Identification des besoins de formation, gestion de l'identité professionnelle (LinkedIn), définition des objectifs de carrière dans l'infrastructure et les réseaux.</div></div></div></div></div>
+    <div class="real-item" onclick="this.classList.toggle('open')"><div class="real-header"><h3>Déploiement d'un parc de postes / Migration Windows 11</h3><div class="real-meta"><div class="real-tags-row"><span class="rtag rtag-c4">C4</span><span class="rtag rtag-c5">C5</span></div><span class="real-period">09/24 – 06/26</span><span class="real-chevron">›</span></div></div><div class="real-body"><div class="real-body-inner"><div class="rb-row"><div class="rb-label">Description</div><div class="rb-text">Planification et exécution de la migration vers Windows 11. Analyse des prérequis, images de déploiement, tests de compatibilité et accompagnement des utilisateurs.</div></div><div class="rb-row"><div class="rb-label">Technologies</div><div class="rb-text">Windows 11, MDT/WDS, GPO, Active Directory</div></div></div></div></div>
+  </div>
+</div></section>
+
+<div class="section-divider"></div>
+
+<section id="synthese"><div class="container">
+  <div class="section-eyebrow">04 · Synthèse</div>
+  <h2 class="section-title">Tableau de synthèse</h2>
+  <p class="section-desc">Couverture des compétences du Bloc 1 par chaque réalisation.</p>
+  <div class="table-wrap">
+    <table class="synth">
+      <thead><tr>
+        <th>Réalisation</th><th>Période</th>
+        <th class="th1">C1</th><th class="th2">C2</th><th class="th3">C3</th><th class="th4">C4</th><th class="th5">C5</th><th class="th6">C6</th>
+      </tr></thead>
+      <tbody>
+        <tr class="group-row"><td colspan="8">En cours de formation</td></tr>
+        <tr><td>Création de site codé en HTML et CSS</td><td>01/25–03/25</td><td></td><td></td><td><span class="ck ck3">✓</span></td><td></td><td></td><td></td></tr>
+        <tr><td>Projet StreamIO : VLAN et routage inter-VLAN</td><td>10/24–02/25</td><td><span class="ck ck1">✓</span></td><td></td><td></td><td><span class="ck ck4">✓</span></td><td><span class="ck ck5">✓</span></td><td></td></tr>
+        <tr><td>Charte informatique et sensibilisation RGPD</td><td>02/25–04/25</td><td><span class="ck ck1">✓</span></td><td></td><td><span class="ck ck3">✓</span></td><td></td><td></td><td></td></tr>
+        <tr><td>Veille informationnelle</td><td>09/24–06/25</td><td></td><td></td><td></td><td></td><td></td><td><span class="ck ck6">✓</span></td></tr>
+        <tr><td>Portfolio en ligne</td><td>09/24–06/25</td><td></td><td></td><td><span class="ck ck3">✓</span></td><td></td><td></td><td><span class="ck ck6">✓</span></td></tr>
+        <tr class="group-row"><td colspan="8">En milieu professionnel — 1ère année</td></tr>
+        <tr><td>Inventaire du parc informatique avec GLPI</td><td>09/24–06/25</td><td><span class="ck ck1">✓</span></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Gestion des droits d'accès Active Directory</td><td>10/24–03/25</td><td><span class="ck ck1">✓</span></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Traitement des incidents et demandes via GLPI</td><td>09/24–06/25</td><td></td><td><span class="ck ck2">✓</span></td><td></td><td></td><td></td><td></td></tr>
+        <tr class="group-row"><td colspan="8">En milieu professionnel — 2ème année</td></tr>
+        <tr><td>Déploiement et tests d'un service DHCP/DNS</td><td>12/24–03/26</td><td></td><td></td><td></td><td></td><td><span class="ck ck5">✓</span></td><td></td></tr>
+        <tr><td>Supervision réseau avec Nagios</td><td>01/25–05/26</td><td><span class="ck ck1">✓</span></td><td><span class="ck ck2">✓</span></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Construction de mon projet professionnel</td><td>09/24–06/26</td><td></td><td></td><td></td><td></td><td></td><td><span class="ck ck6">✓</span></td></tr>
+        <tr><td>Déploiement parc de postes / Migration Windows 11</td><td>09/24–06/26</td><td></td><td></td><td></td><td><span class="ck ck4">✓</span></td><td><span class="ck ck5">✓</span></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<footer>
+  <p>Portfolio E5 — Valentin ACBARD — BTS SIO option SISR — Session 2026</p>
+  <p style="margin-top:0.3rem">CFA ISCIO-EVE · <a href="https://ACBARD-portfolio.fr">ACBARD-portfolio.fr</a></p>
+</footer>
+
+<script>
+document.querySelectorAll('nav a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'})})});
+</script>
+</body>
+</html>
